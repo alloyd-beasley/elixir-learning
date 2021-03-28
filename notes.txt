@@ -1,0 +1,75 @@
+Generating a Project
+    - use mix from CLI
+    - mix new <project name> will generate a new project. 
+
+Elixir Modules
+    - defmodule <Module name>
+    - generated when using mix
+    - a module is a collection of methods or functions
+    - to run a module, run iex.bat (powershell) -S mix
+        - interactive elixir shell
+        - can run elixir code here
+
+Functional v OOP
+    - Module, standalone object
+        - has no idea what an instance variable is. 
+        - collection of methods and nothing more.
+        - methods operate on their arguments, not instance variables
+
+Method arguments
+    - can have multiple methods with the same name
+    - elixir will differentiate like this: 
+        shuffle/0, shuffle method with no arguments
+        shuffle/1, shuffle method with 1 argument
+    - arity: the number of arguments a method accepts. 
+
+Enums
+    - elixir standard library for operations on enumerables
+    - any type of enumerable collection of data
+
+Immutability in Elixir
+    - elixir does not modify existing data structure in place. 
+    - any standard method returns a new data structure.
+
+Methods?
+    - question marks in variable names are valid in elixir. 
+    - used to denote that the method is asking a question and probably returns a boolean
+    - contains? ... probably returns a boolean on whether or not something contains something else. 
+    - can pattern match arguments directly.
+    - pass reference to a function &function/1
+    
+Pattern Matching
+     - elixirs replacement for variable assignment
+     - 
+
+Saving to the file system
+    - have to use erlang to encode your info to binary
+    - write to file system using File
+
+Maps
+    - collections of key/value pairs
+    - colors = %{primary: "red"}
+    - colors.primary = "red"
+    - %{secondary} = colors (pattern matching)
+
+    updating
+        - use map standard library functions, map.put(map, key , val)
+        - does not update existing map, returns a new map\
+
+        - %{colors | primary: "blue"}, create a new map from colors, pipe value for primary
+        - cannot be used to add a new property to the map
+
+Keyword Lists
+    - colors = [{:primary, "red"}, {:secondary, "green"}]
+        - [primary: "red", secondary: "green"]
+        - colors[:primary] = "red"
+        - 
+    - colors = [primary: "red", secondary: "blue"]
+    - when passing a keyword list as the last argument to a function, [] can be omitted. 
+        - function(primary: "red", secondary: "green")    
+
+Structs
+    - a map that is used to store data in an application. 
+    - two advantages over maps: can assign default values, compile time type checking. 
+    - define structs in their own module attached to the application. 
+    - if you know the properties that you are going to be working with, use struct over map. 
